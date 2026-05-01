@@ -1,0 +1,281 @@
+# GPSA Coach Job Postings
+#
+# SCHEMA REFERENCE
+# ----------------
+# Each entry under `postings:` supports the following fields:
+#
+#   id:           (required) URL-safe identifier, used as the HTML element id
+#   team:         (required) Display name shown in the collapsible header
+#   active:       (required) true = show on site, false = hide without deleting the entry
+#
+#   image:        (optional) Path to an image, relative to the site root (e.g. images/foo.jpg)
+#                 If set, the image is shown at the top of the posting. Omit or set to null if unused.
+#
+#   description:  (optional) List of paragraphs shown above the positions section.
+#
+#   positions:    (optional) List of open positions. Each position supports:
+#     - title:          Position name (e.g. "Head Coach")
+#       overview:       (optional) A paragraph describing the role
+#       duties:         (optional) List of bullet-point responsibilities
+#       qualifications: (optional) Per-position qualifications list
+#
+#   qualifications: (optional) Shared qualifications list shown after all positions.
+#
+#   contact:      (optional) Contact information block. Supports:
+#     intro:      Text before the linked name/email/URL
+#     email:      The contact email address (generates a mailto: link)
+#     url:        A plain URL (e.g. Google Form link) — used instead of email when set
+#     link_text:  Display text for the link (defaults to email or url if omitted)
+#     suffix:     Text appended after the link (e.g. ".")
+#     closing:    (optional) A closing paragraph after the contact line
+#
+# WORKFLOW
+# --------
+# To add a posting:    add a new entry with active: true
+# To remove a posting: set active: false (preserves the content for future reuse)
+# To update a posting: edit the relevant fields
+# Push to main — GitHub Actions will rebuild and deploy automatically.
+
+postings:
+
+  - id: village_green-2026
+    team: Village Green Patriots
+    active: true
+    image: images/2026-VG_coach_flyer.png
+    # positions:
+    #   - title: Head Coach
+    #   - title: Assistant Coach
+    contact:
+      # intro: >
+      #   Village Green is looking for applicants interested in coaching or assistant coaching this upcoming season. 
+      #   Call or email for more information 954-536-8544.
+      email: vgswimteamnn@gmail.com
+
+  - id: glendale-2026
+    team: Glendale Gators
+    active: false
+    positions:
+      - title: Associate Head Coach
+      - title: Assistant Coach
+    contact:
+      intro: >
+        If you're interested in joining the Glendale Gators coaching staff for the 2026 season, please complete this form.
+      url: https://docs.google.com/forms/d/e/1FAIpQLSclw8zp7B7aoGYaXyajx31NwPXL5noHv2GDGpCsASpTRWiyVA/viewform
+      link_text: Coaching Interest Form
+
+  - id: poquoson-2026
+    team: Poquoson Barracudas
+    active: true
+    image: images/2026-poquoson-asst_coach.png
+    description:
+      - >
+        Contract Position — Assistant Summer Swim Coach for the Poquoson Barracuda Swim Team,
+        serving youth ages 5–18. The 2026 summer season begins May 26 and runs through August 2,
+        concluding with the GPSA championship meet on August 1 and team banquet on August 2.
+    positions:
+      - title: Assistant Summer Swim Coach
+        duties:
+          - >
+            Serve as assistant coach for the 2026 Summer Swim Season, working cooperatively with
+            the head coach to develop a training program that will effectively improve participants'
+            swim performance and techniques. Serves as a role model to participants by exhibiting
+            good swim habits, sportsmanship, and conduct.
+          - >
+            Provide supervision of swimmers and lead practices that are age and skill appropriate
+            on a daily basis. Practices begin each evening at approximately 5:30pm–8:30pm.
+          - >
+            Assist with set up of equipment required for practices and home meets. Properly return
+            all equipment to storage at the conclusion of use, including lane lines.
+          - >
+            Work cooperatively with all coaches to set up entries, times, and swim line-up for
+            meets. Utilize the swim team management program to do so.
+          - >
+            Conduct, take roll, and lead practices with age and skill appropriate skill sessions
+            as directed. Be present at team functions including meets, practices, and booster
+            club events.
+          - >
+            Attend all meets; provide line-up and coordination for swimmers to be entered in
+            their proper events.
+          - >
+            Enforce all league and Poquoson Parks & Recreation rules and regulations. Handle
+            discipline issues amongst team members and parents as needed, within the team's
+            written guidelines and policies. Uphold all rules of Poquoson Pool and all rules
+            of other facilities when visiting.
+    contact:
+      intro: >
+        To apply, provide your resume to Gretchen Gochenour, Director, City of Poquoson Office
+        of Community Recreation (757-868-3580) at
+      email: Gretchen.Gochenour@poquoson-va.gov
+      closing: >
+        Resume should detail swimming experience, teaching or coaching experience, and documented
+        experience working with children. Compensation is based on experience and is negotiable.
+        Cover letter should detail any salary or pay history. Applicants must be at least 18 years
+        of age. Please include any aquatic certifications or coaching certificates in your resume.
+
+  - id: elizabeth-lake-2025
+    team: Elizabeth Lake
+    active: false
+    description:
+      - >
+        Are you a passionate swim coach looking for an exciting opportunity to lead and inspire
+        a team of dedicated athletes? Do you have a knack for cultivating a positive and supportive
+        environment where swimmers can thrive? Elizabeth Lake swim team in Hampton is seeking a
+        Head Coach and Assistant Coaches for the upcoming summer season!
+      - >
+        About Us: Our swim team is located near the Fox Hill area in Hampton. We take pride in our
+        commitment to fostering a welcoming and inclusive environment where swimmers of all ages and
+        abilities can develop their skills and love for the sport. Our team values sportsmanship,
+        camaraderie, and personal growth both in and out of the pool.
+    positions:
+      - title: Head Coach
+        duties:
+          - Lead and oversee all aspects of the swim team program
+          - Develop and implement training plans to help swimmers reach their full potential
+          - Provide technical instruction and feedback to improve stroke technique
+          - Coordinate and attend swim meets, practices, and team events
+          - Serve as a mentor and role model for athletes and assistant coaches
+      - title: Assistant Swim Coaches
+        duties:
+          - Assist the Head Coach in planning and executing practices and workouts
+          - Provide individualized feedback and support to swimmers during training sessions
+          - Help organize and manage swim meets, events, and team activities
+          - Foster a positive and encouraging atmosphere for swimmers to learn and grow
+    qualifications:
+      - Passion for swimming and coaching
+      - Previous coaching or competitive swimming experience preferred (for Head Coach position)
+      - Strong communication, leadership, and organizational skills
+      - Ability to work well with swimmers of all ages and skill levels
+      - CPR and lifeguard certification (or willingness to obtain)
+    contact:
+      intro: >
+        If you're ready to make a splash as part of the Elizabeth Lake coaching team,
+        please contact Vanessa Smeltzer at
+      email: azsmeltzer@gmail.com
+      closing: >
+        Don't miss out on this fantastic opportunity to lead and inspire young swimmers in our
+        community! We look forward to welcoming enthusiastic coaches to the Elizabeth Lake pool family.
+
+  - id: kiln-creek-2025
+    team: Kiln Creek
+    active: false
+    description:
+      - >
+        Are you enthusiastic, love to teach and love the water? Come be a swim coach for Kiln Creek
+        Dolphins this summer. We are currently looking to hire Assistant Coaches and Junior coaches
+        this summer.
+      - >
+        About us: Kiln Creek Dolphins is a dedicated swim program nestled in the Kiln Creek
+        Homeowners association in Yorktown/Newport News. This community has 21 villages and is home
+        to the Kiln Creek Dolphins.
+    positions:
+      - title: Assistant Coach
+        overview: >
+          Position is responsible for assisting the head and junior assistant coaches with organizing
+          the Kiln Creek Swim Team Inc. program. Position assists with conducting practices,
+          motivating swimmers, and instructing athletes in strategies and techniques.
+        qualifications:
+          - Passion for swimming and teaching
+          - Previous coaching or competitive swimming experience preferred
+          - Strong communication, leadership, and organizational skills
+          - Ability to work well with swimmers of all ages and skill levels
+          - CPR and lifeguard certification (or willingness to obtain)
+      - title: Junior Coach
+        overview: >
+          Position is responsible for assisting the head and assistant coaches with organizing the
+          Kiln Creek Swim Team Inc. program. Position assists with conducting practices, motivating
+          swimmers, and instructing athletes in strategies and techniques.
+        qualifications:
+          - Passion for swimming and teaching
+          - Previous competitive swimming experience or swim instructor experience preferred
+          - Strong communication, leadership, and organizational skills
+          - Ability to work well with swimmers of all ages and skill levels
+          - CPR and lifeguard certification (or willingness to obtain)
+    contact:
+      intro: "If you want to have a great opportunity and a fun summer coaching, please contact Justin Hinson:"
+      email: justin.r.hinson3@gmail.com
+      suffix: "."
+
+  - id: marlbank-2025
+    team: Marlbank Mudtoads
+    active: false
+    description:
+      - >
+        Are you a passionate swim coach looking for an exciting opportunity to lead and inspire a
+        team of dedicated athletes? Do you have a knack for cultivating a positive and supportive
+        environment where swimmers can thrive? Marlbank Pool in York County is seeking both a Head
+        Coach and Assistant Swim Coaches for the upcoming summer season!
+      - >
+        About Us: Marlbank Pool is a vibrant community hub nestled in the heart of York County. We
+        take pride in our commitment to fostering a welcoming and inclusive environment where swimmers
+        of all ages and abilities can develop their skills and love for the sport. Our team values
+        sportsmanship, camaraderie, and personal growth both in and out of the pool.
+    positions:
+      - title: Head Coach
+        duties:
+          - Lead and oversee all aspects of the swim team program
+          - Develop and implement training plans to help swimmers reach their full potential
+          - Provide technical instruction and feedback to improve stroke technique
+          - Coordinate and attend swim meets, practices, and team events
+          - Serve as a mentor and role model for athletes and assistant coaches
+      - title: Assistant Swim Coaches
+        duties:
+          - Assist the Head Coach in planning and executing practices and workouts
+          - Provide individualized feedback and support to swimmers during training sessions
+          - Help organize and manage swim meets, events, and team activities
+          - Foster a positive and encouraging atmosphere for swimmers to learn and grow
+    qualifications:
+      - Passion for swimming and coaching
+      - Previous coaching or competitive swimming experience preferred (for Head Coach position)
+      - Strong communication, leadership, and organizational skills
+      - Ability to work well with swimmers of all ages and skill levels
+      - CPR and lifeguard certification (or willingness to obtain)
+    contact:
+      intro: "If you're ready to make a splash as part of the Marlbank Pool coaching team, please contact"
+      email: marlbankswim@gmail.com
+      link_text: Jennifer Long
+      suffix: "."
+      closing: >
+        Don't miss out on this fantastic opportunity to lead and inspire young swimmers in our
+        community! We look forward to welcoming enthusiastic coaches to the Marlbank Pool family.
+        Let's make waves together!
+
+  - id: poquoson-2025
+    team: Poquoson Barracudas
+    active: false
+    image: images/poquoson-2025.jpg
+
+  - id: riverdale-2025
+    team: Riverdale Rays
+    active: false
+    description:
+      - >
+        Are you passionate about swimming and coaching? Do you have a knack for motivating young
+        athletes to reach their full potential? If so, we want YOU to join our team as an Assistant
+        Swim Coach for the 2025 summer season with the Riverdale Rays in Hampton!
+      - >
+        About Us: The Riverdale Rays are a dynamic and dedicated swim team located in the heart of
+        Hampton. We pride ourselves on fostering a supportive and inclusive environment where swimmers
+        of all skill levels can thrive. Our team is committed to excellence both in and out of the
+        pool, promoting sportsmanship, teamwork, and personal growth.
+      - >
+        Position Overview: As an Assistant Swim Coach, you will work closely with our Head Coach to
+        develop and implement training programs, provide technique instruction, and inspire our
+        athletes to achieve their goals. This role offers a fantastic opportunity to gain valuable
+        coaching experience, make a positive impact on young lives, and become an integral part of
+        our tight-knit swim community.
+    qualifications:
+      - Passion for swimming and coaching
+      - Previous coaching or competitive swimming experience preferred
+      - Strong communication and leadership skills
+      - Ability to work well with children and adolescents
+      - CPR and lifeguard certification (or willingness to obtain)
+    contact:
+      intro: >
+        If you're ready to dive into a rewarding coaching opportunity with the Riverdale Rays,
+        please email the GPSA Representative,
+      email: riverdale@gpsaswimming.org
+      link_text: Heather Rowe
+      suffix: "."
+      closing: >
+        Don't miss out on this exciting chance to make a splash as part of our coaching staff!
+        We look forward to welcoming you aboard the Riverdale Rays family. Go Rays!

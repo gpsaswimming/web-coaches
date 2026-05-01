@@ -1,0 +1,66 @@
+body {
+    font-family: "proxima-nova", "Myriad Pro", Arial, sans-serif;
+}
+
+.collapsible_text {
+    background-color: #dc001e;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collapsible_text {
+    margin-bottom: 10px;
+}
+
+.collapsible_icon {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+.active,
+.collapsible_text:hover {
+    background-color: #e000255c;
+}
+
+.collapsible_content {
+    display: none;
+    overflow: hidden;
+    background-color: #F1F1F1;
+    padding: 0 18px;
+}
+
+.responsive {
+    width: 80%;
+    height: auto;
+}
+
+/* Native <details>/<summary> support */
+summary.collapsible_text {
+    list-style: none;
+}
+
+summary.collapsible_text::-webkit-details-marker {
+    display: none;
+}
+
+details[open] .collapsible_content {
+    display: block;
+}
+
+details:not([open]) .collapsible_icon::after {
+    content: "+";
+}
+
+details[open] .collapsible_icon::after {
+    content: "-";
+}

@@ -1,0 +1,26 @@
+<!--
+  GPSA Coaching Opportunities — Sidebar Widget
+  =============================================
+  Paste this into the SwimTopia sidebar HTML block.
+
+  The button is hidden by default and only appears automatically when
+  there is at least one active posting in data/postings.yaml.
+
+  No edits needed between seasons — pushing postings.yaml changes to
+  main will update status.json, which this widget reads on page load.
+-->
+
+<div id="coaching-btn" style="display:none; text-align:center; margin: 12px 0;">
+  <h2 style="color:#dc001e; background:white; margin-bottom:8px;">Coach with the GPSA This Summer!</h2>
+  <a href="https://www.gpsaswimming.org/coaching-opportunities"
+     style="background:#dc001e; color:white; padding:10px 16px; border-radius:4px;
+            text-decoration:none; font-weight:bold; display:inline-block;">
+    View Current Opportunities
+  </a>
+</div>
+<script>
+  fetch('https://coach-postings.gpsaswimming.org/status.json')
+    .then(r => r.json())
+    .then(d => { if (d.active_postings > 0)
+      document.getElementById('coaching-btn').style.display = 'block'; });
+</script>

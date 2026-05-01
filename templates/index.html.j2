@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://css.gpsaswimming.org/gpsa-swimtopia-iframe.css">
+    <title>GPSA Coach Listings</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4/js/iframeResizer.contentWindow.min.js"></script>
+</head>
+
+<body>
+    {% for posting in postings %}
+    <details id="{{ posting.id }}">
+        <summary class="collapsible_text">
+            {{ posting.team }}
+            <span class="collapsible_icon"></span>
+        </summary>
+        <div class="collapsible_content">
+
+            {% if posting.image %}
+            <p style="text-align: center;">
+                <img src="{{ posting.image }}" class="responsive">
+            </p>
+            {% endif %}
+
+            {% for para in posting.description | default([]) %}
+            <p>{{ para }}</p>
+            {% endfor %}
+
+            {% if posting.positions %}
+            <p>Positions Available:</p>
+            <ol>
+                {% for position in posting.positions %}
+                <li>{{ position.title }}:
+                    {% if position.overview %}
+                    <p>{{ position.overview }}</p>
+                    {% endif %}
+                    {% if position.duties %}
+                    <ul>
+                        {% for duty in position.duties %}
+                        <li>{{ duty }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% if position.qualifications %}
+                    <p>Qualifications</p>
+                    <ul>
+                        {% for qual in position.qualifications %}
+                        <li>{{ qual }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ol>
+            {% endif %}
+
+            {% if posting.qualifications %}
+            <p>Qualifications:</p>
+            <ul>
+                {% for qual in posting.qualifications %}
+                <li>{{ qual }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% if posting.contact %}
+            <p>
+                {{ posting.contact.intro }}
+                {% if posting.contact.url %}
+                <a href="{{ posting.contact.url }}" target="_blank">{{ posting.contact.link_text | default(posting.contact.url) }}</a>{{ posting.contact.suffix | default('') }}
+                {% elif posting.contact.email %}
+                <a href="mailto:{{ posting.contact.email }}" target="_blank">{{ posting.contact.link_text | default(posting.contact.email) }}</a>{{ posting.contact.suffix | default('') }}
+                {% endif %}
+            </p>
+            {% if posting.contact.closing %}
+            <p>{{ posting.contact.closing }}</p>
+            {% endif %}
+            {% endif %}
+
+        </div>
+    </details>
+    {% endfor %}
+</body>
+
+</html>
