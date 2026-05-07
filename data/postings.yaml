@@ -65,7 +65,7 @@ postings:
 
   - id: poquoson-2026
     team: Poquoson Barracudas
-    active: true
+    active: false
     image: images/2026-poquoson-asst_coach.png
     description:
       - >
