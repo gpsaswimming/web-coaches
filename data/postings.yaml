@@ -40,7 +40,7 @@ postings:
 
   - id: village_green-2026
     team: Village Green Patriots
-    active: true
+    active: false
     image: images/2026-VG_coach_flyer.png
     # positions:
     #   - title: Head Coach
